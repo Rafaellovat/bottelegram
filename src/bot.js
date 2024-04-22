@@ -29,6 +29,7 @@ bot.onText(/\/echo (.+)/, (msg, match) => {
   bot.sendMessage(chatId, resp);
 });
 
+
 // Função para aguardar a próxima mensagem do usuário e salvar o e-mail
 async function aguardarProximaMensagemForaDoHorario(chatId) {
     bot.once('message', async (msg) => {
@@ -40,9 +41,9 @@ async function aguardarProximaMensagemForaDoHorario(chatId) {
                     email: messageContent
                 }
             });
-            bot.sendMessage(chatId, 'E-mail salvo com sucesso:', messageContent);
+            bot.sendMessage(chatId, `E-mail salvo com sucesso: ${messageContent}`);
         } catch (error) {
-            bot.sendMessage(chatId, 'Erro ao salvar o e-mail:', error);
+            bot.sendMessage(chatId, `Erro ao salvar o e-mail: ${error.toString()}`);
         }
     });
 }
