@@ -1,8 +1,0 @@
-// schema.prisma
-
-// Defina o modelo para representar a tabela no banco de dados
-model User {
-  id        Int      @id @default(autoincrement())
-  email     String   @unique
-  createdAt DateTime @default(now())
-}
